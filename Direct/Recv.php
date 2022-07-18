@@ -16,7 +16,7 @@ $channel->exchange_declare(
     'exchange.direct', // 交换机名，需要唯一，不能重复
     'direct', // 交换机类型
     false,
-    false, // 是否持久化
+    true, // 是否持久化
     false
 );
 
@@ -27,7 +27,7 @@ list($queue_name, ,) = $channel->queue_declare("", false, false, true, false);
 $channel->queue_bind(
     $queue_name, // 队列名
     'exchange.direct', // 交换机名字
-    "hello" // 绑定路由参数，这里绑定hello
+    "orange" // 绑定路由参数，这里绑定orange
 );
 
 echo " [*] Waiting for message. To exit press CTRL+C\n";

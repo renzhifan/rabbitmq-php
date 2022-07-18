@@ -17,7 +17,7 @@ $channel->exchange_declare(
     'exchange.direct', // 交换机名，需要唯一，不能重复
     'direct', // 交换机类型
     false,
-    false, // 是否持久化
+    true, // 是否持久化
     false
 );
 
@@ -29,7 +29,7 @@ $msg = new AMQPMessage("hello exchange_direct");
 $channel->basic_publish(
     $msg, // 消息对象
     'exchange.direct', // 交换机名字
-    "hello" // 路由参数，可以根据需求，任意定义。
+    "orange" // 路由参数，可以根据需求，任意定义。
 );
 
 echo ' [x] Sent ', $msg->getBody(), "\n";
