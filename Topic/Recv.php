@@ -16,7 +16,7 @@ $channel->exchange_declare(
     'exchange.topic', // 交换机名，需要唯一，不能重复
     'topic', // 交换机类型
     false,
-    false, // 是否持久化
+    true, // 是否持久化
     false
 );
 
